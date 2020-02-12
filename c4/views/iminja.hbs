@@ -1,0 +1,10 @@
+<form method="post" action="/iminja">
+    <input name="ime" placeholder="ime"/>
+    <button>Add</button>
+       <button>Delete</button>
+</form>
+<ul>
+{{#each iminja}}
+    <li>{{this}}</li>
+{{/each}}
+</ul>
