@@ -8,20 +8,20 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'hbs');
 
-app.get('/', (req, res) => {
-    // res.send('ok');
-    let data = {
-        ime: 'Pero'
-    };
-    res.render('main', data);
-});
+// app.get('/', (req, res) => {
+//     // res.send('ok');
+//     let data = {
+//         ime: 'Pero'
+//     };
+//     res.render('main', data);
+// });
 
 app.get('/iminja', iminja.getIminja);
 app.post('/iminja', iminja.postIminja);
 
 app.get('/students', students.getStudents);
 app.post('/students', students.postStudents);
-
+app.delete('/students', students.deleteStudents);
 
 
 app.listen(8080);

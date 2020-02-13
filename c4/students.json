@@ -1,25 +1,5 @@
 [
-    {
-        "id": 1975481726,
-        "first_name": "Jonn",
-        "last_name": "Smith",
-        "location": {
-            "address": "str. Lombard 234",
-            "city": "San Fracisco",
-            "state": "California",
-            "country": "USA",
-            "coordinates": {
-                "lon": 3.468237846,
-                "lat": 3.468237846
-            }
-        },
-        "subjects": [
-            "math",
-            "history",
-            "science"
-        ],
-        "avg_grade": 8.3
-    },
+   
     {
         "id": 7635427863,
         "first_name": "Sam",
@@ -68,5 +48,19 @@
         "last_name": "dema",
         "address": "dizhonska",
         "avg_grade": 55
+    },
+    {
+        "id": 1581500296524,
+        "first_name": "rexhep",
+        "last_name": "dema2",
+        "address": "alia avdoivc",
+        "avg_grade": 123
+    },
+    {
+        "id": 1581611955601,
+        "first_name": "toni",
+        "last_name": "montana",
+        "address": "prilep",
+        "avg_grade": 3
     }
 ]

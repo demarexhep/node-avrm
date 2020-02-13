@@ -43,11 +43,13 @@ const postStudents = (req, res) => {
     });
 };
 
-//Delete student
+//update student
 
 
 module.exports = {
     getStudents,
-    postStudents
-    
+    postStudents,
+    updateStudents,
+    deleteStudents
+
 };

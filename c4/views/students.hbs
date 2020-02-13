@@ -8,11 +8,11 @@
 <body>
     <form action="/students" method="post">
         <input type="text" name="first_name" placeholder="first name" required="required"/>
-        <input type="text" name="last_name" placeholder="last name" required="required"/>
+         <input type="text" name="last_name" placeholder="last name" required="required"/>
         <input type="text" name="address" placeholder="address" required="required"/>
         <input type="number" name="avg_grade" placeholder="avg grade" required="required"/>
         <button type="submit">ADD</button>
-                <button type="submit">DELETE</button>
+             
 
     </form>
     <br/><hr/><br/>
@@ -22,15 +22,19 @@
             <th>Last Name</th>
             <th>Address</th>
             <th>Avg. Grade</th>
+            <th>Actions</th>
         </tr>
         {{#each students}}
         <tr id="id_{{this.id}}">
-            <td>{{this.first_name}}</td>
+           <td>{{this.first_name}}</td>        
             <td>{{this.last_name}}</td>
             <td>{{this.address}}</td>
             <td>{{this.avg_grade}}</td>
-        </tr>
+            <td><button><strong>Edit</strong></button><button><strong>Delete</strong></button></td>
+            
+        </tr> 
         {{/each}}
     </table>
+    
 </body>
 </html>
