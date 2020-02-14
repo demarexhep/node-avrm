@@ -1,40 +1,88 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+
 </head>
+
+
+
 <body>
-    <form action="/students" method="post">
-        <input type="text" name="first_name" placeholder="first name" required="required"/>
-         <input type="text" name="last_name" placeholder="last name" required="required"/>
-        <input type="text" name="address" placeholder="address" required="required"/>
-        <input type="number" name="avg_grade" placeholder="avg grade" required="required"/>
-        <button type="submit">ADD</button>
-             
+
+    <form action="/add" method="post">
+        <input type="text" name="first_name" placeholder="first name" required="required" < />
+        <input type="text" name="last_name" placeholder="last name" required="required" < />
+        <input type="text" name="address" placeholder="address" required="required" < />
+        <input type="number" name="avg_grade" placeholder="avg name" required="required" < />
+        <button type="submit"><strong>ADD</strong></button>
 
     </form>
-    <br/><hr/><br/>
+
+    <br />
+
+    <hr /><br />
+
+
+
+    <form action="/edit" method="post">
+        <select name="id">
+            {{#each students}}
+            <option name="id">{{this.id}}</option>
+            {{/each}}
+
+        </select>
+
+        <input type="text" name="first_name" placeholder="first name" required="required" < />
+        <input type="text" name="last_name" placeholder="last name" required="required" < />
+        <input type="text" name="address" placeholder="address" required="required" < />
+        <input type="number" name="avg_grade" placeholder="avg name" required="required" < />
+        <button type="submit"><strong>EDIT</strong></button>
+
+    </form>
+    <br />
+    <hr /><br />
+
     <table border="1" width="80%">
         <tr>
+            <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Address</th>
             <th>Avg. Grade</th>
-            <th>Actions</th>
+            <th>Delete</th>
         </tr>
+
         {{#each students}}
         <tr id="id_{{this.id}}">
-           <td>{{this.first_name}}</td>        
+            <td>{{this.id}}</td>
+            <td>{{this.first_name}}</td>
             <td>{{this.last_name}}</td>
             <td>{{this.address}}</td>
             <td>{{this.avg_grade}}</td>
-            <td><button><strong>Edit</strong></button><button><strong>Delete</strong></button></td>
-            
-        </tr> 
+            <td>
+                <form action="" method="post">
+                    <button type="submit" name="id" value={{this.id}}><strong>DELETE</strong></button>
+                </form>
+
+            </td>
+
+        </tr>
+
         {{/each}}
+
     </table>
-    
+
 </body>
+
+
+
 </html>

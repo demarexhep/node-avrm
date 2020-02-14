@@ -1,27 +1,26 @@
 const express = require('express');
-const hbs = require('hbs');
+var hbs = require('hbs');
 const bodyParser = require('body-parser');
-const iminja = require('./handlers/iminja');
-const students = require('./handlers/students');
+const handlers = require('./handlers/students');
 
-var app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
+
+
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false}));
 app.set('view engine', 'hbs');
 
-// app.get('/', (req, res) => {
-//     // res.send('ok');
-//     let data = {
-//         ime: 'Pero'
-//     };
-//     res.render('main', data);
-// });
+//GET
+app.get('/students', handlers.getStudents);
 
-app.get('/iminja', iminja.getIminja);
-app.post('/iminja', iminja.postIminja);
+//POST
+app.post('/add', handlers.postStudents);
 
-app.get('/students', students.getStudents);
-app.post('/students', students.postStudents);
-app.delete('/students', students.deleteStudents);
+//Edit a student by ID
+app.post('/edit', handlers.editStudents);
+
+//Delete s students
+app.post('/students', handlers.deleteStudents);
 
 
 app.listen(8080);
