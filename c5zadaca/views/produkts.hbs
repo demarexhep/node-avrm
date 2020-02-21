@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="/styles/main.css" />
+  <title>Zadaca c5</title>
+</head>
+
+<body>
+ <div class='container'>
+        <form method="POST" action="/insert" class='form'>
+            <input type="text"   name="ime"  placeholder="ime"  required="required" />
+            <input type="text"   name="proizvoditel"  placeholder="proizvoditel"  required="required" />       
+            <input type="number" name="cena"  placeholder="cena" required="required" />       
+            <input type="number" name="tezina"  placeholder="tezina" required="required" />                
+            <input type="number" name="parcinja" placeholder="parcinja"  required="required" />
+            <button type="submit" name="add" >Insert</button>
+        </form>
+</div>
+        <hr />
+
+<div class='container'>
+        <form action="/update" method="post" class='form'>
+          <select name="idUp">
+            {{#each produkts}}
+            <option name="id">{{this.id}}</option>
+            {{/each}}
+          </select>
+
+          <input type="text" name="imeUp" placeholder="ime" required="required">
+          <input type="text" name="proizvoditelUp" placeholder="proizvoditel" required="required">
+          <input type="number" name="cenaUp" placeholder="cena" required="required">
+          <input type="number" name="tezinaUp" placeholder="tezina" required="required">
+          <input type="number" name="parcinjaUp" placeholder="parcinja" required="required">
+          <button type="submit" name="update" style="background-color: rgb(203, 218, 72);">Update</button>
+        </form>
+</div>
+        <hr />
+
+        {{!-- <form method="POST" action="/delete">
+    <input type="text" , name="_id" , placeholder="ID" , required="required" />
+    <button type="submit" name="delete" style="background-color: rgb(233, 61, 49);">Delete</button>
+  </form> --}}
+
+
+<h2>Data</h2>
+<div class="table-wrapper">
+        <table class="fl-table">
+          <tr>
+            <th>ID</th>
+            <th>Ime</th>
+            <th>Proizvoditel</th>
+            <th>Cena</th>
+            <th>Tezina</th>
+            <th>Parcinja</th>
+          </tr>
+          {{#each produkts}}
+          <tr _id="id_{{this._id}}">
+            <td>{{this._id}}</td>
+            <td>{{this.ime}}</td>
+            <td>{{this.proizvoditel}}</td>
+            <td>{{this.cena}}</td>
+            <td>{{this.tezina}}</td>
+            <td>{{this.parcinja}}</td>
+            <td>
+              <form action="/delete" method="post">
+                <button type="submit" name="_id" value={{this._id}}><strong>DELETE</strong></button>
+              </form>
+
+            </td>
+          </tr>
+          {{/each}}
+        </table>
+    </div>
+
+
+  </body>
+
+</html>
