@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css"/>
+    <title>Edit User</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="form">
+            <h1>Edit User</h1>
+            <form method="post">
+              
+        <input type="hidden" name="id" value="{{user_id}}"/>
+                <label>
+                    <span>First Name</span>
+                    <input type="text" name="first_name" required/>
+                </label>
+                <label>
+                    <span>Last Name</span>
+                    <input type="text" name="last_name" required/>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" required/>
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" required/>
+                </label>
+                
+                <button type="submit" name="update">Update</button>
+                <a class="reglink" href="/dashboard">Close</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

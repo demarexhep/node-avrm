@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogposts</title>
+    <link rel="stylesheet" href="/styles/newblog.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <h2>Blogposts</h2>
+            <a href="/logout">Log out</a>
+        </div>
+    </header>
+    <div class="main-container">
+
+       
+            <form method="post" action="/blogposts/new">
+            
+            <textarea type="text" name="content" required></textarea>
+                <button type="submit">Create</button>
+                <a class="reglink" href="/blogposts">Back to Blogposts</a>
+            </form>
+
+     
+</body>
+
+</html>

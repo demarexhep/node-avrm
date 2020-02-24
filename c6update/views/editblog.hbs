@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blogposts</title>
+    <link rel="stylesheet" href="/styles/newblog.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <h2>Blogposts</h2>
+            <a href="/logout">Log out</a>
+        </div>
+    </header>
+    {{!-- this is {{blog_id}} with content: {{blogs.content}} --}}
+    <div class="main-container">
+            <form method="post" action="/blogposts/edit/{{blog_id}}">
+            <input type="hidden" name="id" value="{{blog_id}}" />
+            <textarea type="text" name="content" required>{{blogs.content}}</textarea>
+                <button type="submit">update</button>
+                <a class="reglink" href="/blogposts">Back to Blogposts</a>
+            </form>
+
+     
+</body>
+
+</html>
